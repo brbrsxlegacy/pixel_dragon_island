@@ -1,57 +1,74 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-
-<!-- MOBİL UYUMLU -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-<title>Dragon Island PRO</title>
-
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pixel Dragon Island</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<!-- ===== GAME ROOT ===== -->
-<div id="game-container">
+  <div id="gameWrap">
+    <header id="topBar">
+      <div class="logo">🐉 Pixel Dragon Island</div>
 
-    <!-- CANVAS -->
-    <canvas id="game" width="1024" height="576"></canvas>
+      <div class="moneyBox">
+        <span>🪙 <b id="goldText">500</b></span>
+        <span>🍖 <b id="foodText">100</b></span>
+        <span>💎 <b id="gemText">25</b></span>
+      </div>
 
-    <!-- ===== UI OVERLAY ===== -->
-    <div id="ui">
+      <button id="marketBtn">MARKET</button>
+    </header>
 
-        <!-- ÜST BAR -->
-        <div id="topbar">
-            <div class="res gold">🪙 <span id="gold">0</span></div>
-            <div class="res food">🍖 <span id="food">0</span></div>
-            <div class="res gems">💎 <span id="gems">0</span></div>
+    <main id="gameArea">
+      <canvas id="gameCanvas" width="960" height="640"></canvas>
+    </main>
 
-            <button id="marketBtn">MARKET</button>
-        </div>
-
-        <!-- ===== MARKET PANEL ===== -->
-        <div id="marketPanel" class="panel hidden">
-            <h2>Market</h2>
-
-            <div class="item" data-type="habitat">
-                <b>Habitat</b>
-                <span>100 Altın</span>
-            </div>
-
-            <div class="item" data-type="dragon">
-                <b>Ejderha</b>
-                <span>5 💎</span>
-            </div>
-
-            <button id="closeMarket">Kapat</button>
-        </div>
-
+    <div id="hint">
+      Tile seç → Habitat koy → Ejderha al → Adada yaşasın
     </div>
-</div>
+  </div>
 
-<!-- JS -->
-<script src="game.js"></script>
+  <div id="marketPanel" class="hidden">
+    <div class="marketHeader">
+      <h2>MARKET</h2>
+      <button id="closeMarket">X</button>
+    </div>
 
+    <div class="marketGrid">
+      <button class="buyBtn" data-buy="habitat">
+        <b>Habitat</b>
+        <span>150 Altın</span>
+      </button>
+
+      <button class="buyBtn" data-buy="fire">
+        <b>Ateş Ejderhası</b>
+        <span>5 Elmas</span>
+      </button>
+
+      <button class="buyBtn" data-buy="water">
+        <b>Su Ejderhası</b>
+        <span>5 Elmas</span>
+      </button>
+
+      <button class="buyBtn" data-buy="nature">
+        <b>Doğa Ejderhası</b>
+        <span>5 Elmas</span>
+      </button>
+
+      <button class="buyBtn" data-buy="electric">
+        <b>Elektrik Ejderhası</b>
+        <span>8 Elmas</span>
+      </button>
+
+      <button class="buyBtn" data-buy="shadow">
+        <b>Gölge Ejderhası</b>
+        <span>10 Elmas</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
 </body>
 </html>
