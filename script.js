@@ -1,3 +1,6 @@
+canvas.style.width = canvas.width + "px";
+canvas.style.height = canvas.height + "px";
+
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
