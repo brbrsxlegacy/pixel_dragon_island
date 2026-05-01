@@ -341,6 +341,6 @@ function loop() {
   render();
   requestAnimationFrame(loop);
 }
-
+console.log("Pixel Dragon Island çalışıyor");
 hud();
 loop();
